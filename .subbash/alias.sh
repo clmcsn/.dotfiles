@@ -1,0 +1,23 @@
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias cdp='cd -'
+alias home='cd ~'
+alias root='cd /'
+
+alias cc='clear'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias l.='ls -d .* --color=auto'
+alias h='history'
+alias wget='wget -c'
+
+alias g='git'
+alias st='git status'
+alias com='git commit -m'
+alias cact='conda activate'
+alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
