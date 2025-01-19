@@ -1,3 +1,6 @@
 [submodule ".config/kitty/kitty-themes"]
 	path = .config/kitty/kitty-themes
 	url = git@github.com:dexpota/kitty-themes.git
+[submodule ".config/new-nvim/pack/github/start/copilot.vim"]
+	path = .config/new-nvim/pack/github/start/copilot.vim
+	url = git@github.com:github/copilot.vim.git
