@@ -7,3 +7,4 @@ if [[ $- == *i* ]]; then
 	so ~/.subbash/prompt.sh
 fi
 so ~/.subbash/alias.sh
+so ~/.subbash/path.sh

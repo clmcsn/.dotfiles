@@ -20,6 +20,6 @@ alias g='git'
 alias st='git status'
 alias com='git commit -m'
 alias cact='conda activate'
-alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dff='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias nv-cstm='NVIM_APPNAME=new-nvim nvim'
