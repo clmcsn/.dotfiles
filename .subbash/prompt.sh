@@ -28,15 +28,17 @@ function __prompt_command() {
         local PSOpt=""                      ## Above, and fixes repeat issue
 	
 	    PS1+="[${Pur}\$(date +%k)${RCol}:${Pur}\$(date +%M)${RCol}] "
-	    if [ $CONDA_DEFAULT_ENV != "base" ]; then
-		PS1+="(${Gre}${CONDA_DEFAULT_ENV}${RCol}) "
+	    if [ ! -n ${CONDA_DEFAULT_ENV} ]; then
+	        if [ "$CONDA_DEFAULT_ENV" != "base" ]; then
+		    PS1+="(${Gre}${CONDA_DEFAULT_ENV}${RCol}) "
+	        fi
 	    fi
 	    PS1+="\u@"
 	    PS1+="\h "
 	    PS1+="${Cya}\W${RCol}"
 
     fi
-
+    
     ### Jobs ###
     type jobs &>/dev/null
     if [ ${PIPESTATUS[-1]} == 0 ]; then
@@ -56,7 +58,6 @@ function __prompt_command() {
             PS1+=" ${Yel}[stp:${STPJBS}]${RCol}"
         fi
      fi
-
     ### Git ###
     ## Inspired by http://www.terminally-incoherent.com/blog/2013/01/14/whats-in-your-bash-prompt/
     if [ ! -e "${HOME}/.no_git_prompt" ]; then
@@ -121,7 +122,7 @@ function __prompt_command() {
                 if [ -n "${GSPca}" ] && [ "${GSPca}" -gt 0 ]; then
                     PS1+="${Gre}↑${RCol}${GSPca}"   ## Ahead
                 fi
-
+		puts "half GIT"
                 ## Needs a `git fetch` to be accurate
                 ## GSP Commit Behind; 4rd spot; Knock off leading symbol; Check exist and gt 0
                 local GSPcb="$(awk '/branch.ab/ {print substr($4,2)}' <<< "${GSP}")"
