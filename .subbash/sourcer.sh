@@ -6,5 +6,4 @@ so() { [ -s $1 ] && source $1; }
 if [[ $- == *i* ]]; then
 	so ~/.subbash/prompt.sh
 fi
-
 so ~/.subbash/alias.sh
