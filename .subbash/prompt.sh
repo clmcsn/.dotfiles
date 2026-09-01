@@ -122,7 +122,6 @@ function __prompt_command() {
                 if [ -n "${GSPca}" ] && [ "${GSPca}" -gt 0 ]; then
                     PS1+="${Gre}↑${RCol}${GSPca}"   ## Ahead
                 fi
-		puts "half GIT"
                 ## Needs a `git fetch` to be accurate
                 ## GSP Commit Behind; 4rd spot; Knock off leading symbol; Check exist and gt 0
                 local GSPcb="$(awk '/branch.ab/ {print substr($4,2)}' <<< "${GSP}")"
