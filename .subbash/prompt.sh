@@ -33,7 +33,8 @@ function __prompt_command() {
 		    PS1+="(${Gre}${CONDA_DEFAULT_ENV}${RCol}) "
 	        fi
 	    fi
-	    PS1+="\u@"
+	    PS1+="\u"
+	    PS1+="${Gre}@${RCol}"
 	    PS1+="\h "
 	    PS1+="${Cya}\W${RCol}"
 
